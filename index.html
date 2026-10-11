@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Registration App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="app-header">
+    <h1>Event Registration Portal</h1>
+    <button id="themeToggleBtn" class="btn-theme">Dark Theme</button>
+  </header>
+
+  <main class="container">
+    
+    <section class="events-section">
+      <h2>Select an Event</h2>
+      <div class="events-grid">
+        <div class="event-card" data-event-name="Web Design Workshop" data-event-time="Oct 15, 10:00 AM">
+          <h3>Web Design Workshop</h3>
+          <p class="event-time">📅 Oct 15, 10:00 AM</p>
+          <p>Learn modern UI/UX principles, CSS Flexbox/Grid, and responsive design techniques.</p>
+          <button class="btn select-btn">Select Event</button>
+        </div>
+
+        <div class="event-card" data-event-name="JavaScript Quiz" data-event-time="Oct 18, 2:00 PM">
+          <h3>JavaScript Quiz</h3>
+          <p class="event-time">📅 Oct 18, 2:00 PM</p>
+          <p>Test your JS fundamentals, DOM manipulation skills, and asynchronous programming.</p>
+          <button class="btn select-btn">Select Event</button>
+        </div>
+
+        <div class="event-card" data-event-name="IT Career Talk" data-event-time="Oct 22, 5:00 PM">
+          <h3>IT Career Talk</h3>
+          <p class="event-time">📅 Oct 22, 5:00 PM</p>
+          <p>Listen to industry experts share insights on entering software engineering and interviews.</p>
+          <button class="btn select-btn">Select Event</button>
+        </div>
+      </div>
+      <p id="selectedEventError" class="error-text hidden">Please select an event above.</p>
+    </section>
+
+    <section class="form-section">
+      <h2>Registration Form</h2>
+      <form id="registrationForm" novalidate>
+        
+        <input type="hidden" id="selectedEventInput" value="">
+
+        <div class="form-group">
+          <label for="fullName">Full Name:</label>
+          <input type="text" id="fullName" placeholder="Enter your full name">
+          <small class="char-counter">Characters: <span id="charCount">0</span></small>
+          <small id="nameError" class="error-text">Name must be at least 3 characters long.</small>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address:</label>
+          <input type="email" id="email" placeholder="name@example.com">
+          <small id="emailError" class="error-text">Please enter a valid email address.</small>
+        </div>
+
+        <div class="form-group">
+          <label for="studentGroup">Student Group:</label>
+          <input type="text" id="studentGroup" placeholder="e.g., IT-2504">
+          <small id="groupError" class="error-text">Student group is required.</small>
+        </div>
+
+        <div class="form-group checkbox-group">
+          <label>
+            <input type="checkbox" id="agreement"> I agree to the event terms and code of conduct.
+          </label>
+          <small id="agreementError" class="error-text">You must agree before submitting.</small>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Register Now</button>
+      </form>
+    </section>
+
+    <section class="result-section">
+      <h2>Registration Results</h2>
+      <div id="resultContainer" class="empty-state">
+        <p>No registrations yet. Select an event and fill out the form.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
